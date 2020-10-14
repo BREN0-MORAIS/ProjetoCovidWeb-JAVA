@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+      
+    </h:head>
+    <h:body>
+      <h:form>
+      <p:commandButton action="#{pacienteController.novo()}" value="Novo" />
+      <p:dataTable value="#{pacienteController.pacientes}"
+                   var="paciente"
+                   >
+          <p:column>
+              <f:facet name="header">Código</f:facet>
+              <h:outputText value="#{paciente.codigo}" />  
+          </p:column>
+      <p:column>
+            <f:facet name="header">Nome</f:facet>
+          <h:outputText value="#{paciente.nome}" />     
+      </p:column>
+          <p:column>
+              <f:facet name="header">E-mail</f:facet>
+              <h:outputText value="#{paciente.email}" />
+          </p:column>
+          <p:column headerText="Ações">
+              <p:commandButton icon="pi pi-edit" />
+              <p:commandButton icon="pi pi-delete" />
+          </p:column>
+      </p:dataTable>
+      </h:form>
+    </h:body>
+</html>
+

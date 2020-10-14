@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:messages id="messages" showDetail="true" closable="true">
+                <p:autoUpdate />
+            </p:messages>
+            <p:panelGrid columns="2" style="margin: 0 auto;">
+                <f:facet name="header">
+                    <h:outputText value="Novo Paciente" />
+                </f:facet>
+                <p:outputLabel value="Nome" />
+                <p:inputText value="#{pacienteController.paciente.nome}" />
+                <p:outputLabel value="E-mail" />
+                <p:inputText value="#{pacienteController.paciente.email}"/>
+                <p:outputLabel value="Telefone" />
+                <p:inputText value="#{pacienteController.paciente.telefone}" />
+                <p:commandButton value="Voltar" action="#{pacienteController.voltar()}"/>
+                <p:commandButton value="Salvar" action="#{pacienteController.salvar()}"/>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
